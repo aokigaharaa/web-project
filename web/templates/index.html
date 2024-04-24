@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body {
+            background-color: #CBD6F2;
+        }
+
+        .head {
+            line-height: 60px;
+            margin-left: 20px;
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .login {
+            position: absolute;
+            line-height: 76px;
+            font-size: 16px;
+            font-family: 'Raleway', sans-serif;
+            color:rgba(0, 0, 0, 0.8);
+            border: none;
+            text-decoration: underline;
+            background: none;
+            right: 80px;
+            cursor: pointer;
+        }
+
+        .registration {
+            position: absolute;
+            line-height: 76px;
+            font-size: 16px;
+            font-family: 'Raleway', sans-serif;
+            color:rgba(0, 0, 0, 0.8);
+            border: none;
+            text-decoration: underline;
+            background: none;
+            right: calc(80px + 70px + 40px);
+            cursor: pointer;
+        }
+
+        .delivery-calculator {
+            padding: 50px 210px;
+            margin-left: 60px;
+            margin-top: 10px;
+            background: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slogan {
+            color:rgba(0, 0, 0, 0.8);
+            font-size: 48px;
+            margin-top: 150px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            margin-left: 60px;
+        }
+        
+        .in-rectangle {
+            position: absolute;
+            font-size: 24px;
+            font-family: 'Inter', sans-serif;
+            text-align: left;
+            left: 100px;
+            transform: translateY(-50%);
+            text-decoration: none;
+            border: none;
+            color:rgba(0, 0, 0, 1);
+        }
+
+        .search {
+            position: fixed;
+            font-size: 24px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .rectangle {
+            background-color: #FFFFFF;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 10px 90px #A8A8A8;
+            margin-top: 10px;
+        }
+
+        .registration a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .login a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        img {
+            transform: scale(3);
+            left: 300px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <a href="/" class="head">ООО "Последний путь"
+            <button action="login.html" class="registration">
+                <a href="registration">Регистрация</a>
+            </button>
+            <button class="login">
+                <a href="login">Вход</a>
+            </button>
+        </a>
+    </div>
+    <div class="slogan">Когда каждая доставка - <br>как последняя</div>
+    <button class="delivery-calculator">
+        <a href="/registration" class="in-rectangle">Рассчитать время и стоимость<br>доставки</a>
+    </button>
+    <img src="https://i.postimg.cc/hjcLLbKy/rab.png" alt="UNKNOWN" style="height: 200px; width: 250;">
+</body>
+</html>

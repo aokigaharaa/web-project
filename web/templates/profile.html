@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #CBD6F2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .profile {
+            position: absolute;
+            line-height: 76px;
+            font-family: 'Raleway', sans-serif;
+            color:rgba(0, 0, 0, 0.8);
+            border: none;
+            text-decoration: underline;
+            background: none;
+            cursor: pointer;
+            right: calc(90px + 120px);
+            font-size: 16px;
+        }
+
+        .rectangle {
+            background-color: #FFFFFF;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 10px 90px #A8A8A8;
+            margin-top: 10px;
+        }
+
+        .exit {
+            position: absolute;
+            line-height: 76px;
+            font-family: 'Raleway', sans-serif;
+            color:rgba(0, 0, 0, 0.8);
+            border: none;
+            text-decoration: underline;
+            background: none;
+            cursor: pointer;
+            right: 90px;
+            font-size: 16px;
+        }
+
+        .head {
+            line-height: 60px;
+            margin-left: 20px;
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .order {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.8);
+            font-family: 'Raleway', sans-serif;
+            font-size: 36px;
+        }
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        button {
+            border: none;
+            background-color: #CBD6F2;
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <a href="/" class="head">ООО "Последний путь"
+            <a href="/profile" class="profile">Личный кабинет</a>
+            <a href="/logout" class="exit">Выход</a>
+        </a>
+    </div>
+    <h1>Добро пожаловать, {{ session['username'] }}!</h1>
+    <h2>Ваши грузоперевозки:</h2>
+    <table>
+        <tr>
+            <th>Дата</th>
+            <th>Транспорт</th>
+            <th>Пункт назначения</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item['date'] }}</td>
+            <td>{{ item['transport'] }}</td>
+            <td>{{ item['destination'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="center">
+        <img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" alt="UNKNOWN" style="height: 130px;" height="180">
+        <button>
+            <a class="order" href="https://discord.com/users/1087374395913277471" target="_blank">Оформить заказ(!order Транспорт Пункт_назначения Логин)</a>
+        </button>
+    </div>
+</body>
+</html>
