@@ -5,6 +5,8 @@ import json
 import asyncio
 from disnake.ext import commands
 import os
+from dotenv import load_dotenv
+
 
 
 bot = commands.Bot(command_prefix="!", help_command=None, intents=disnake.Intents.all(),
@@ -20,6 +22,8 @@ registered_users = json.load(open('registered_users.json')) if os.path.exists('r
 if os.path.exists('transportations.json'):
     with open('transportations.json', 'r') as file:
         datas = json.load(file)
+
+datas=[]
 
 
 @bot.event
@@ -168,7 +172,7 @@ async def reg(ctx, username: str, password: str):
             color=0x228b22
         ))
 
-    with open('registered_users.json', 'w') as file:
+    with open('discord-bot/registered_users.json', 'w') as file:
         json.dump(registered_users, file, indent=4)
 
 
@@ -207,11 +211,12 @@ async def order(ctx, *args):
 
     datas.append(data)
 
-    with open('transportations.json', 'w') as file:
+    with open('discord-bot/transportations.json', 'w') as file:
         json.dump(datas, file, indent=4)
         file.write('\n')
 
     await ctx.send(f'Данные успешно сохранены для пользователя {login}.')
 
 
-bot.run('MTA4NzM3NDM5NTkxMzI3NzQ3MQ.GRfw88.bv-OzyCkxf6LQz260Omsy4CYj0G9U_XdOv9zV4')
+load_dotenv()
+bot.run(os.getenv('TOKEN'))
