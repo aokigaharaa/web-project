@@ -28,7 +28,7 @@ datas=[]
 
 @bot.event
 async def on_ready():
-    print(f"Бот {bot.user} везёт груз 200!!")
+    print(f"Бот {bot.user} везёт груз!!")
 
 
 @bot.event
@@ -123,7 +123,7 @@ async def untimeout(ctx, member: disnake.Member):
 @bot.command(name="kick", brief="Кикнуть пользователя", usage="!kick <@user> <reason = None>",
              help="Кикает пользователя с сервера")
 @commands.has_permissions(kick_members=True, administrator=True)
-async def kick(ctx, member: disnake.Member, *, reason="падла"):
+async def kick(ctx, member: disnake.Member, *, reason="None"):
     await ctx.send(embed=disnake.Embed(
         title="Кикнут!",
         description=f"Великий {ctx.author.mention} кикнул {member.mention} по причине {reason}!",
@@ -136,7 +136,7 @@ async def kick(ctx, member: disnake.Member, *, reason="падла"):
 @bot.command(name="ban", brief="Забанить пользователя", usage="!ban <@user> <reason = None>",
              help="Банит игрока на сервере")
 @commands.has_permissions(ban_members=True, administrator=True)
-async def ban(ctx, member: disnake.Member, *, reason="падла"):
+async def ban(ctx, member: disnake.Member, *, reason="None"):
     await ctx.send(embed=disnake.Embed(
         title="Забанен!",
         description=f"Великий {ctx.author.mention} забанил {member.mention} по причине {reason}!",
@@ -172,7 +172,7 @@ async def reg(ctx, username: str, password: str):
             color=0x228b22
         ))
 
-    with open('discord-bot/registered_users.json', 'w') as file:
+    with open('registered_users.json', 'w') as file:
         json.dump(registered_users, file, indent=4)
 
 
@@ -211,7 +211,7 @@ async def order(ctx, *args):
 
     datas.append(data)
 
-    with open('discord-bot/transportations.json', 'w') as file:
+    with open('transportations.json', 'w') as file:
         json.dump(datas, file, indent=4)
         file.write('\n')
 
